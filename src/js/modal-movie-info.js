@@ -1,3 +1,4 @@
+import * as basicLightbox from 'basiclightbox';
 import { getMovieById } from './fetch-functions/get-movie-info';
 import { activateModalBtns } from './modal/activate-movie-modal';
 import { renderModalFilm } from './modal/render-modal';
@@ -14,10 +15,19 @@ export async function onMovieCardClick(evt) {
     console.log(movieId);
     const movieInfo = await movieId.data;
     console.log(movieInfo);
-    renderModalFilm({movieInfo });
-   // activateModalBtns();
-  } catch (error) {
-    console.log(error);
+    renderModalFilm({ movieInfo });
+
+    
   }
+    catch (error) {
+      console.log(error);
+    }
 }
-onMovieCardClick();
+
+onMovieCardClick().then(movieInfo => {
+  instance = basicLightbox.create(movieInfo);
+
+  instance.show();
+
+  activateModalBtns();
+});
