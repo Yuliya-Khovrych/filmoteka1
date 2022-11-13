@@ -8,15 +8,16 @@ export async function onMovieCardClick(evt) {
   let id = +currentItem.dataset.id;
 
   try {
-    document.querySelector('.backdrop').classList.add('modal-open');
+    document.querySelector('body').classList.add('modal-open');
 
     const movieId = await getMovieById(id);
     console.log(movieId);
     const movieInfo = await movieId.data;
     console.log(movieInfo);
     renderModalFilm({movieInfo });
-    activateModalBtns();
+   // activateModalBtns();
   } catch (error) {
     console.log(error);
   }
 }
+onMovieCardClick();
