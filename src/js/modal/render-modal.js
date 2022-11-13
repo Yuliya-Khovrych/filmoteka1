@@ -5,13 +5,13 @@ export function renderModalFilm(film) {
   backdrop.innerHTML = modalFilm(film);
   const votes = document.querySelector('.modal__attributes-vote');
   const popularity = document.querySelector('.modal__attributes-text--popular');
-  votes.textContent =
-    votes.textContent % 1 === 0
-      ? votes.textContent
-      : (+votes.textContent).toFixed(1);
-  popularity.textContent =
-    popularity.textContent % 1 === 0
-      ? popularity.textContent
-      : (+popularity.textContent).toFixed(1);
+  // votes.textContent =
+  //   votes.textContent % 1 === 0
+  //     ? votes.textContent
+  //     : (+votes.textContent).toFixed(1);
+  // popularity.textContent =
+  //   popularity.textContent % 1 === 0
+  //     ? popularity.textContent
+  //     : (+popularity.textContent).toFixed(1);
   backdrop.classList.remove('is-hidden');
 }
