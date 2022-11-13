@@ -4,7 +4,7 @@ import { onMovieCardClick } from './js/modal-movie-info';
 
 renderQueue();
 renderWatched();
-onMovieCardClick();
+
 
 $('.carousel').slick({
   dots: true,
