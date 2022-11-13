@@ -11,7 +11,7 @@ export async function onMovieCardClick(evt) {
     document.querySelector('body').classList.add('modal-open');
 
     const movieId = await getMovieById(id);
-    const movieInfo = movieId.data;
+    const movieInfo = await movieId.data;
     renderModalFilm({ movieInfo });
     activateModalBtns();
   } catch (error) {
